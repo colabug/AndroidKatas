@@ -1,0 +1,45 @@
+apply plugin: 'java'
+
+buildscript
+{
+    repositories
+    {
+        jcenter()
+        maven
+        {
+            url 'https://oss.sonatype.org/content/repositories/snapshots/'
+        }
+    }
+
+    dependencies
+    {
+        classpath 'com.android.tools.build:gradle:1.0.0'
+    }
+}
+
+dependencies
+{
+    def androidModule = project(':app')
+    compile androidModule
+
+    testCompile androidModule.android.applicationVariants.toList().first().javaCompile.classpath
+    testCompile androidModule.android.applicationVariants.toList().first().javaCompile.outputs.files
+    testCompile files(androidModule.plugins.findPlugin("com.android.application").getBootClasspath())
+
+    testCompile 'junit:junit:4.+'
+    testCompile('org.robolectric:robolectric:2.4') {
+        exclude module: 'support-v4'
+    }
+ }
+
+tasks.withType(Test)
+{
+    // Prevents the "superClassName is empty" error for classes not annotated as tests
+    scanForTestClasses = false
+    include "**/*Test.class"
+
+    test {
+        // set JVM arguments for the test JVM(s)
+        jvmArgs '-XX:-UseSplitVerifier'
+   }
+}

@@ -8,13 +8,15 @@ The `master` branch has Robolectric preintegrated. Simply import into Android St
 
 ![Import project](images/import_non_android_project.png)
 
-> Note: To become comfortable with integrating Robolectric, you can use the ["Hello, Robolectric" chapter of the Android Activity Book](coreylatislaw.com/android-activity-book/) or my Pocket Guide to TDD with Robolectric (coming soon!) as a separate *kata*.
+> Note: To become comfortable with integrating Robolectric, you can use the ["Hello, Robolectric" chapter of the Android Activity Book](https://gumroad.com/l/androidactivitybook) or my Pocket Guide to TDD with Robolectric (coming soon!) as a separate *kata*.
 
 ## Run the Tests
 
 Now that the project is imported, ensure the tests run.
 
 Create a [run configuration](http://blog.blundell-apps.com/how-to-run-robolectric-junit-tests-in-android-studio/) to run the tests from the IDE (my preferred method). To run the tests from the command line, use `./gradlew check`.
+
+![Run Configuration](images/run_config.png)
 
 When running for the first time, I often get this error -- and sometimes well after the project has begun.
 

@@ -7,4 +7,10 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".WelcomeActivity">
+
+    <fragment
+        android:id="@+id/welcome_fragment"
+        android:name="com.greenlifesoftware.simple1.WelcomeFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </RelativeLayout>

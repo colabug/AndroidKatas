@@ -43,17 +43,16 @@ I've listed the tests that we'll work through to make this app a reality.
 ## Sum Fragment
 
 * Test 10: Should not be null
-* Test 11: Should have add button (with right text)
-* Test 12: Should have sum display
-* Test 13: Should have default display text
-* Test 14: Add button should display 5
+* Test 11: Should have add button (configured properly)
+* Test 12: Should have sum display (with default text)
+* Test 13: Add button should display 5 after click
 
 ## Card Fragment
 
-* Test 15: Should not be null
-* Test 16: Should have image (configured properly)
-* Test 17: Should have toast card button (configured properly)
-* Test 18: Should toast when clicked
+* Test 14: Should not be null
+* Test 15: Should have image (configured properly)
+* Test 16: Should have toast card button (configured properly)
+* Test 17: Should toast when clicked
 
 # Resources
 

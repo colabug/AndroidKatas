@@ -35,8 +35,19 @@ public class SecondActivityTest
     @Test
     public void shouldHaveSumFragment() throws Exception
     {
-        Fragment fragment = activity.getFragmentManager().findFragmentById( R.id.sum_fragment );
+        Fragment fragment = getFragmentById( R.id.sum_fragment );
         assertNotNull( fragment );
+    }
 
+    @Test
+    public void shouldHaveCardFragment() throws Exception
+    {
+        Fragment fragment = getFragmentById( R.id.card_fragment );
+        assertNotNull( fragment );
+    }
+
+    private Fragment getFragmentById( int id )
+    {
+        return activity.getFragmentManager().findFragmentById( id );
     }
 }

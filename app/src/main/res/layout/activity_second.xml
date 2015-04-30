@@ -10,4 +10,10 @@
         android:name="com.greenlifesoftware.simple1.SumFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
+    <fragment
+        android:id="@+id/card_fragment"
+        android:name="com.greenlifesoftware.simple1.CardFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </LinearLayout>

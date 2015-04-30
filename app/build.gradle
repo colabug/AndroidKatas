@@ -5,7 +5,7 @@ android {
     buildToolsVersion "21.1.2"
 
     defaultConfig {
-        applicationId "com.greenlifesoftware.calculator"
+        applicationId "com.greenlifesoftware.simple1"
         minSdkVersion 12
         targetSdkVersion 18
         versionCode 1

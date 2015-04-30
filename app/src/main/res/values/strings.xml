@@ -7,5 +7,6 @@
     <string name="START_ACTIVITY_BUTTON_TEXT">Start Activity</string>
     <string name="ADD_BUTTON_TEXT">Add 2 and 3</string>
     <string name="DEFAULT_SUM_DISPLAY">Sum</string>
+    <string name="CARD_TOAST">You picked the Ace of Clubs.</string>
 
 </resources>

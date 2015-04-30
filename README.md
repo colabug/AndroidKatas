@@ -1,36 +1,63 @@
 # Robolectric *Katas*
 
-Use this repository a starting point to complete Android code *katas*.
+## Simple *Kata* 1
 
-## Import
+Let's start our first *kata*!
 
-The `master` branch has Robolectric preintegrated. Simply import into Android Studio using the "Import Non-Android Studio project" option and selecting the top-level `build.gradle` file. 
+> Note: You can reference this exercise repeatedly while practicing TDD with Robolectric.
 
-![Import project](images/import_non_android_project.png)
 
-> Note: To become comfortable with integrating Robolectric, you can use the ["Hello, Robolectric" chapter of the Android Activity Book](https://gumroad.com/l/androidactivitybook) or my Pocket Guide to TDD with Robolectric (coming soon!) as a separate *kata*.
+## Exercise
 
-## Run the Tests
+We are going to implementing two different activities.
 
-Now that the project is imported, ensure the tests run.
+The `WelcomeActivity` will have a `WelcomeFragment` with text and a button that starts a new activity.
 
-Create a [run configuration](http://blog.blundell-apps.com/how-to-run-robolectric-junit-tests-in-android-studio/) to run the tests from the IDE (my preferred method). To run the tests from the command line, use `./gradlew check`.
+The `SecondActivity` has two fragments. The `SumFragment` has a button and a label. The button updates the label with the sum. The `CardFragment` has an image and a button. The button shows a toast.
 
-![Run Configuration](images/run_config.png)
+![Run Configuration](images/simple1.png)
 
-When running for the first time, I often get this error -- and sometimes well after the project has begun.
+## Tests
 
-```
-Error:(25,0) Gradle: A problem occured evaluating projecy ':robolectric_tests'.
-             > Could not find property 'android' on project ':app'.
-```
+We will create this application using test driven development (TDD). After we write a test, we'll write the code to passes that test before moving on to add more functionality.
 
-If you invalidate your caches and restart ("File" -> "Invalidate Caches / Restart ..."), it clears up the problem. Sometimes opening and closing Android Studio is required.
+> Note: Before we start - make sure your tests run! We will be running the test regularly throughout this exercise must work off a known good state.
 
-![Error Message](images/couldnt_find_android_property.png)
+I've listed the tests that we'll work through to make this app a reality.
 
-## *Katas*
+### Welcome Activity
 
-Now that the project is configured, you're ready to work though some *katas*.
+* Test 1: Should not be null
+* Test 2: Should have welcome fragment
 
-Join [my newsletter](http://coreylatislaw.com/android-activity-book/) for updates about my upcoming book with Android *katas*. In the meantime, check out these resources to help you on your test driven development (TDD) journey.
+### Welcome Fragment
+
+* Test 3: Should not be null
+* Test 4: Should have welcome text (configured properly)
+* Test 5: Should have button (configured properly)
+* Test 6: Button click should start a new activity
+
+### Second Activity
+
+* Test 7: Should not be null
+* Test 8: Should have sum fragment
+* Test 9: Should have card fragment
+
+### Sum Fragment
+
+* Test 10: Should not be null
+* Test 11: Should have add button (with right text)
+* Test 12: Should have sum display
+* Test 13: Should have default display text
+* Test 14: Add button should display 5
+
+### Card Fragment
+
+* Test 15: Should not be null
+* Test 16: Should have image (configured properly)
+* Test 17: Should have toast card button (configured properly)
+* Test 18: Should toast when clicked
+
+## Resources
+
+Check out my book that walks you through creating a calculator from start to finish using test driven development (TDD): [Android Activity Book](https://gumroad.com/l/androidactivitybook). Join [my newsletter](http://coreylatislaw.com/android-activity-book/) for updates about my books.

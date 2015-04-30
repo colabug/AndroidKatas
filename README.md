@@ -1,13 +1,10 @@
-# Robolectric *Katas*
-
-## Simple *Kata* 1
+# Simple *Kata* 1
 
 Let's start our first *kata*!
 
 > Note: You can reference this exercise repeatedly while practicing TDD with Robolectric.
 
-
-## Exercise
+# Exercise
 
 We are going to implementing two different activities.
 
@@ -17,7 +14,7 @@ The `SecondActivity` has two fragments. The `SumFragment` has a button and a lab
 
 ![Run Configuration](images/simple1.png)
 
-## Tests
+# Tests
 
 We will create this application using test driven development (TDD). After we write a test, we'll write the code to passes that test before moving on to add more functionality.
 
@@ -25,25 +22,25 @@ We will create this application using test driven development (TDD). After we wr
 
 I've listed the tests that we'll work through to make this app a reality.
 
-### Welcome Activity
+## Welcome Activity
 
 * Test 1: Should not be null
 * Test 2: Should have welcome fragment
 
-### Welcome Fragment
+## Welcome Fragment
 
 * Test 3: Should not be null
 * Test 4: Should have welcome text (configured properly)
 * Test 5: Should have button (configured properly)
 * Test 6: Button click should start a new activity
 
-### Second Activity
+## Second Activity
 
 * Test 7: Should not be null
 * Test 8: Should have sum fragment
 * Test 9: Should have card fragment
 
-### Sum Fragment
+## Sum Fragment
 
 * Test 10: Should not be null
 * Test 11: Should have add button (with right text)
@@ -51,13 +48,13 @@ I've listed the tests that we'll work through to make this app a reality.
 * Test 13: Should have default display text
 * Test 14: Add button should display 5
 
-### Card Fragment
+## Card Fragment
 
 * Test 15: Should not be null
 * Test 16: Should have image (configured properly)
 * Test 17: Should have toast card button (configured properly)
 * Test 18: Should toast when clicked
 
-## Resources
+# Resources
 
 Check out my book that walks you through creating a calculator from start to finish using test driven development (TDD): [Android Activity Book](https://gumroad.com/l/androidactivitybook). Join [my newsletter](http://coreylatislaw.com/android-activity-book/) for updates about my books.

@@ -18,4 +18,9 @@ public class WelcomeFragment extends Fragment
         View layout = inflater.inflate( R.layout.fragment_welcome, container, false );
         return layout;
     }
+
+    public static WelcomeFragment createInstance()
+    {
+        return new WelcomeFragment();
+    }
 }

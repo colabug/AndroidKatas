@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">Simple1</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="welcome">Welcome text is customary -- help your users orient to your app</string>
     <string name="action_settings">Settings</string>
 
 </resources>

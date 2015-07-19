@@ -2,6 +2,7 @@ package com.greenlifesoftware.simple1;
 
 import com.greenlifesoftware.support.RobolectricGradleTestRunner;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
@@ -12,13 +13,28 @@ import static org.junit.Assert.assertNotNull;
 
 public class SecondActivityTest
 {
-    @Test
-    public void shouldNotBeNull() throws Exception
+
+    private SecondActivity secondActivity;
+
+    @Before
+    public void setUp() throws Exception
     {
-        SecondActivity secondActivity = Robolectric.buildActivity( SecondActivity.class )
+        secondActivity = Robolectric.buildActivity( SecondActivity.class )
                                                    .create()
                                                    .resume()
                                                    .get();
-        assertNotNull(secondActivity);
+    }
+
+    @Test
+    public void shouldNotBeNull() throws Exception
+    {
+        assertNotNull( secondActivity );
+    }
+
+    @Test
+    public void shouldHaveSumFragment() throws Exception
+    {
+        assertNotNull(secondActivity.getFragmentManager().findFragmentById( R.id.sum_fragment ));
+
     }
 }

@@ -1,18 +1,19 @@
 package com.greenlifesoftware.simple1;
 
+import android.widget.Button;
 import android.widget.TextView;
 
-import com.greenlifesoftware.support.ResourceLocator;
 import com.greenlifesoftware.support.RobolectricGradleTestRunner;
 
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static com.greenlifesoftware.support.Assert.assertViewIsVisible;
+import static com.greenlifesoftware.support.ResourceLocator.*;
 import static com.greenlifesoftware.support.ViewFetcher.*;
 import static org.hamcrest.CoreMatchers.equalTo;
+import static org.junit.Assert.*;
 import static org.junit.Assert.assertNotNull;
 import static org.robolectric.util.FragmentTestUtil.startFragment;
 
@@ -40,7 +41,16 @@ public class WelcomeFragmentTest
     {
         TextView welcomeText = getTextView( welcomeFragment, R.id.welcome_text );
         assertViewIsVisible( welcomeText );
-        Assert.assertThat( welcomeText.getText().toString(),
-                           equalTo( ResourceLocator.getString( R.string.welcome ) ) );
+        assertThat( welcomeText.getText().toString(),
+                    equalTo( getString( R.string.welcome ) ) );
+    }
+
+    @Test
+    public void shouldHaveStartActivityButton() throws Exception
+    {
+        Button startActivityButton = getButton( welcomeFragment, R.id.start_activity_button );
+        assertViewIsVisible( startActivityButton );
+        assertThat( startActivityButton.getText().toString(),
+                    equalTo( getString( R.string.start_activity_button_text ) ) );
     }
 }

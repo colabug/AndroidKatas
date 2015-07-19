@@ -16,7 +16,23 @@ public class WelcomeFragment extends Fragment
                               Bundle savedInstanceState )
     {
         View layout = inflater.inflate( R.layout.fragment_welcome, container, false );
+
+        layout.findViewById( R.id.start_activity_button )
+              .setOnClickListener( createSecondActivityClickListener() );
+
         return layout;
+    }
+
+    private View.OnClickListener createSecondActivityClickListener()
+    {
+        return new View.OnClickListener()
+        {
+            @Override
+            public void onClick( View v )
+            {
+                startActivity( SecondActivity.createIntent( getActivity() ) );
+            }
+        };
     }
 
     public static WelcomeFragment createInstance()

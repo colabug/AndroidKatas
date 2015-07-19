@@ -1,5 +1,6 @@
 package com.greenlifesoftware.simple1;
 
+import android.content.Intent;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -8,6 +9,9 @@ import com.greenlifesoftware.support.RobolectricGradleTestRunner;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.robolectric.Robolectric;
+import org.robolectric.shadows.ShadowActivity;
+import org.robolectric.shadows.ShadowIntent;
 
 import static com.greenlifesoftware.support.Assert.assertViewIsVisible;
 import static com.greenlifesoftware.support.ResourceLocator.*;
@@ -22,12 +26,15 @@ import static org.robolectric.util.FragmentTestUtil.startFragment;
 public class WelcomeFragmentTest
 {
     private WelcomeFragment welcomeFragment;
+    private Button startActivityButton;
 
     @Before
     public void setUp() throws Exception
     {
         welcomeFragment = WelcomeFragment.createInstance();
         startFragment( welcomeFragment );
+
+        startActivityButton = getButton( welcomeFragment, R.id.start_activity_button );
     }
 
     @Test
@@ -48,9 +55,19 @@ public class WelcomeFragmentTest
     @Test
     public void shouldHaveStartActivityButton() throws Exception
     {
-        Button startActivityButton = getButton( welcomeFragment, R.id.start_activity_button );
         assertViewIsVisible( startActivityButton );
         assertThat( startActivityButton.getText().toString(),
                     equalTo( getString( R.string.start_activity_button_text ) ) );
+    }
+
+    @Test
+    public void shouldStartActivityOnButtonClick() throws Exception
+    {
+        startActivityButton.performClick();
+        ShadowActivity shadowActivity = Robolectric.shadowOf( welcomeFragment.getActivity() );
+        Intent startedIntent = shadowActivity.getNextStartedActivity();
+        ShadowIntent shadowIntent = Robolectric.shadowOf( startedIntent );
+        assertEquals( SecondActivity.class.getName(),
+                      shadowIntent.getComponent().getClassName() );
     }
 }

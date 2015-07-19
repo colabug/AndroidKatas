@@ -4,6 +4,7 @@ import com.greenlifesoftware.support.RobolectricGradleTestRunner;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.robolectric.Robolectric;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -14,7 +15,10 @@ public class WelcomeActivityTest
     @Test
     public void shouldNotBeNull() throws Exception
     {
-        WelcomeActivity activity = new WelcomeActivity();
+        WelcomeActivity activity = Robolectric.buildActivity( WelcomeActivity.class )
+                                              .create()
+                                              .resume()
+                                              .get();
         assertNotNull( activity );
     }
 }

@@ -1,4 +1,4 @@
-package com.greenlifesoftware.calculator.support;
+package com.greenlifesoftware.support;
 
 import android.view.View;
 

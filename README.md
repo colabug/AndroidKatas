@@ -45,7 +45,7 @@ I've listed the tests that we'll work through to make this app a reality.
 * Test 10: Should not be null
 * Test 11: Should have add button (configured properly)
 * Test 12: Should have sum display (with default text)
-* Test 13: Add button should display 5 after click
+* Test 13: After click of the add button, display 5 instead of "Sum"
 
 ## Card Fragment
 

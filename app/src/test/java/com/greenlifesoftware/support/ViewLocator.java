@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class ViewFetcher
+public class ViewLocator
 {
     public static View getView( Fragment fragment, int viewId )
     {

@@ -4,6 +4,8 @@ Let's start our first *kata*!
 
 > Note: You can reference this exercise repeatedly while practicing TDD with Robolectric.
 
+If you'd like a guided walk through of this process, grab a copy of my [video series](http://www.gum.co/AndroidKataIntro)!
+
 # Exercise
 
 We will be implementing two different activities.

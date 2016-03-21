@@ -6,7 +6,7 @@ Let's start our first *kata*!
 
 # Exercise
 
-We are going to implementing two different activities.
+We will be implementing two different activities.
 
 The `WelcomeActivity` will have a `WelcomeFragment` with text and a button that starts a new activity.
 

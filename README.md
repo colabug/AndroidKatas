@@ -4,15 +4,11 @@ This repository accompanies the [CasterIO video series](https://caster.io/episod
 
 # Design
 
-I've created a simple appication so that you can practice TDD.
-
 ![Kata: Activity](images/kata_activity.png)
 
 # Exercise
 
-We will be implementing one activity with several view types.
-
-The `RobolectricPracticeActivity` will have several views.
+The `RobolectricPracticeActivity` will have several view types.
 
 * `Toolbar` with title text
 * `TextView` with welcome text
@@ -25,11 +21,7 @@ The `RobolectricPracticeActivity` will have several views.
 
 We will create this application using test driven development (TDD). After we write a test, we'll write the code to passes that test before moving on to add more functionality.
 
-> Note: Before we start - make sure your tests run! We will be running the test regularly throughout this exercise must work off a known good state.
-
-## Welcome Activity
-
-Here's the tests that we'll work through to make this app a reality.
+> Note: Before we start - make sure your tests run! We will be running the tests regularly throughout this exercise.
 
 1. Activity should not be null
 1. Should have toolbar

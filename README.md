@@ -1,75 +1,51 @@
-# Robolectric *Katas*
+# *Kata*: Activity
 
-Use this repository a starting point to complete Android code *katas*.
+This repository accompanies the [CasterIO video series](https://caster.io/episodes/integrating-robolectric-3-with-android-studio-2/) on testing with Robolectric. 
 
-Join [my newsletter](http://coreylatislaw.com/android-activity-book/) for updates about my upcoming book with Android *katas*.
+# Design
 
-# Import
+I've created a simple appication so that you can practice TDD.
 
-The `master` branch has Robolectric preintegrated.
+![Kata: Activity](images/kata_activity.png)
 
-> Note: To become comfortable with integrating Robolectric, use the ["Hello, Robolectric" chapter of the Android Activity Book](https://gumroad.com/l/androidactivitybook) or my Pocket Guide to TDD with Robolectric (coming soon!) as a separate *kata*.
+# Exercise
 
-Simply import into Android Studio using the "Import Non-Android Studio project" option and selecting the top-level `build.gradle` file. 
+We will be implementing one activity with several view types.
 
-![Import project](images/import_non_android_project.png)
+The `RobolectricPracticeActivity` will have several views.
 
-# Test Artifact
+* `Toolbar` with title text
+* `TextView` with welcome text
+* `TextView` header for data entry
+* `EditText` with a hint for data entry
+* `Fragment` with nothing in it (we'll test fragments in a future video)
+* `Button` that toasts a message
 
-In Android Studio, open the "Build Variants" tab and select "Unit Tests" as the "Test Artifact" and `debug` from the drop down next to `app`.
+# Tests
 
-![](images/test_variant.png)
+We will create this application using test driven development (TDD). After we write a test, we'll write the code to passes that test before moving on to add more functionality.
 
-# Run Tests
+> Note: Before we start - make sure your tests run! We will be running the test regularly throughout this exercise must work off a known good state.
 
-Now that the project is set up, ensure the tests run.
+## Welcome Activity
 
-Create a run configuration to run the tests from the IDE (my preferred method). Click the plus button, select "junit," and match the configuration shown here:
+Here's the tests that we'll work through to make this app a reality.
 
-![Run Configuration](images/run_config.png)
-
-You can also run the tests from the command line, using `./gradlew check`.
-
-Now that the project is configured, you're ready to work though some *katas*!
-
-# Troubleshooting
-
-## Junit Runtime Scope
-
-If you get this error when using your run configuration, you used the wrong module name in your classpath when you configured it.
-
-```
-10:15:14 AM Error running Unnamed: No junit.jar in Module 'AndroidKatas' runtime scope
-```
-
-Change it to use `app` instead of `AndroidKatas`.
-
-## `NoClassDefFoundError`: `ResultPrinter`
-
-If you get this error:
-
-```
-Exception in thread "main" java.lang.NoClassDefFoundError: junit/textui/ResultPrinter
-	at java.lang.Class.forName0(Native Method)
-	at java.lang.Class.forName(Class.java:191)
-	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:122)
-Caused by: java.lang.ClassNotFoundException: junit.textui.ResultPrinter
-	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
-	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
-	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
-	... 3 more
-
-Process finished with exit code 1
-```
-
-It means that you forgot to select "Unit Tests" as the "Test Artifact" in the "Build Variants" window.
+1. Activity should not be null
+1. Should have toolbar
+1. Should have toolbar title
+1. Should have welcome text
+1. Should have entry header
+1. Should have entry
+1. Should have entry hint
+1. Should have fragment
+1. Should have toast button
+1. Should have toast button text
+1. Toast button should toast
+1. Button click should start a new activity
 
 # Resources
 
-* [Installation overview](http://robolectric.org/getting-started/)
-* [Robolectric examples](https://github.com/robolectric/robolectric-samples/tree/master/android-flavors/src)
-* [Integration + running](https://www.bignerdranch.com/blog/triumph-android-studio-1-2-sneaks-in-full-testing-support/)
+Check out my book that walks you through creating a calculator from start to finish using test driven development (TDD): [Android Activity Book](https://gumroad.com/l/androidactivitybook). Join [my newsletter](http://coreylatislaw.com/android-activity-book/) for updates about my books.
+
+If you'd like a guided walk through of this process, grab a copy of my [video series](http://www.gum.co/AndroidKataIntro)!
